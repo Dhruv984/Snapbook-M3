@@ -1,0 +1,20 @@
+.captureImage{
+    border-radius: 20px;
+    z-index: 1;
+} 
+.captureImage__button{
+    background-color: black;
+    color:rgb(179, 176, 176);
+    border-radius: 10px;
+    width:200px;
+    height:45px;
+    letter-spacing: 4px;
+    border:none;
+    outline: none;
+}
+.captureImage__button:hover{
+    cursor: pointer;
+    opacity:0.8;
+    background-color: rgb(8, 8, 8);
+
+}

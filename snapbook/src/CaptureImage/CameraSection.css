@@ -1,0 +1,9 @@
+.cameraSection .MuiSvgIcon-root {
+    cursor:pointer;
+    outline:none;
+    transition: all .2s ease-in-out;
+    padding-right: 15px;
+}
+.cameraSection .MuiSvgIcon-root {
+    transform:scaleX(1.1);
+}

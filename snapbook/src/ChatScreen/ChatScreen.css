@@ -1,0 +1,32 @@
+.chatScreen__gridContainer{
+    background-color: white;
+    width:600px;
+    height:450px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px ;
+
+}
+.chatScreen__right__innerGridContainer{
+    display:grid;
+    grid-template-rows: 1fr 4fr 1fr;
+    height:100%;
+}
+
+.chatScreen__right__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom:1px solid  silver;
+    background-color: #990000;
+    border-radius: 20px 20px 0px 0px;
+}
+.chatScreen__right__header .MuiSvgIcon-root{
+    color:white;
+    
+}
+.chatScreen__right__header> .MuiSvgIcon-root{
+   font-size: 50px;
+   padding-left: 15px;
+   color:white;
+}
+
