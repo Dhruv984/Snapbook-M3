@@ -5,12 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {StateProvider} from './context_reducers/ImageContext'
 import { initialState, reducer } from './context_reducers/ImageReducer';
+import {LoginStateProvider} from './context_reducers/LoginContext';
+import { initialLoginState, Loginreducer } from './context_reducers/LoginReducer';
 
 ReactDOM.render(
   <React.StrictMode>
+    <LoginStateProvider reducer={Loginreducer} initialState={initialLoginState}>
     <StateProvider reducer={reducer} initialState={initialState}>
+     
        <App />
-    </StateProvider>
+       </StateProvider>
+    </LoginStateProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

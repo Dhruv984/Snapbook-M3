@@ -1,0 +1,23 @@
+.message{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:4px;
+    border-bottom:1px solid whitesmoke;
+    cursor:pointer;
+}
+.message:hover{
+  opacity: 0.8;
+}
+.message__Avatar{
+  height:40px;
+  width: 40px;
+
+}
+.message__info{
+    padding-left: 10px;
+    flex:1;
+}
+.message__readIcon{
+  color:#960200;
+}

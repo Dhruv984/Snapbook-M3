@@ -1,32 +1,45 @@
 .chatScreen__gridContainer{
     background-color: white;
-    width:600px;
-    height:450px;
+    width:360px;
+    height:540px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 20px ;
+    border-radius: 0px 0px 20px 20px ;
+    overflow-y: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
 
 }
-.chatScreen__right__innerGridContainer{
+.chatScreen__innerGridContainer{
     display:grid;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 4fr 0.5fr;
     height:100%;
 }
-
-.chatScreen__right__header{
+.chatScreen__messages{
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.chatScreen__messages::-webkit-scrollbar {
+    width: 10px;
+  }
+.chatScreen__messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius:10px;
+  }
+.footer{
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom:1px solid  silver;
-    background-color: #990000;
-    border-radius: 20px 20px 0px 0px;
-}
-.chatScreen__right__header .MuiSvgIcon-root{
-    color:white;
-    
-}
-.chatScreen__right__header> .MuiSvgIcon-root{
-   font-size: 50px;
-   padding-left: 15px;
-   color:white;
+    justify-content: center;
 }
 
+.footer .MuiSvgIcon-root{
+    color:white;
+}
+
+
+
+ 

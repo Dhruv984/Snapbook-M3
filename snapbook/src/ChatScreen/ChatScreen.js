@@ -1,32 +1,41 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
+import './ChatScreen.css'
 
 //components
 import CameraSection from '../CaptureImage/CameraSection'
-//mui
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import Message from '../Messages/Message'
 
-import './ChatScreen.css'
+//firebase
+import {db} from '../firebase'
+
 
 function ChatScreen() {
+    
+    const [posts,setPosts]=useState([]);
+    useEffect(()=>{
+       db.collection('posts').orderBy('timestamp','desc').onSnapshot(snapshot=>{
+           setPosts(snapshot.docs.map(doc=>({
+               id:doc.id,
+               data:doc.data()
+           })))
+       })
+    },[])
 
-  
     return (
         <div className='chatScreen chatScreen__gridContainer'>
-                <div className='chatScreen__right__innerGridContainer'>
-                    <div className='chatScreen__right__header'>
-                        <AccountCircleIcon />
-                        <CameraSection/>
+                <div className='chatScreen__innerGridContainer'>
+                    <div className='chatScreen__messages'>
+                      {
+                          posts.map(({id,data:{imageUrl,read, timestamp,userImage,userName}})=>{
+                              return <Message id={id} imageUrl={imageUrl} timestamp={timestamp} userImage={userImage} userName={userName} read={read}/>
+                          })
+                      }
                     </div>
-                    <div className='chatScreen__right__messages'>
-                        messages
+                    <div className='footer'>
+                      <CameraSection/>
                     </div>
-                    <div className='chatScreen__right__footer'>
-                        footer
-                    </div>
-        </div>
+                 </div>
             
-            
-
         </div>
     )
 }

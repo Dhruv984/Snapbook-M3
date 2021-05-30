@@ -3,18 +3,22 @@ import './CaptureImage.css'
 
 //context
 import { useStateValue} from '../context_reducers/ImageContext'
+import { action_types } from '../context_reducers/ImageReducer';
 
 //components
 import Webcam from 'react-webcam'
-import { action_types } from '../context_reducers/ImageReducer';
+
 //router
 import {useHistory} from 'react-router-dom';
+
+//mui
+import CameraIcon from '@material-ui/icons/Camera';
 
 
 
 const videoConstraints = {
-    width: 200,
-    height: 400,
+    width: 360,
+    height: 610,
     facingMode: "user"
   };
  
@@ -31,7 +35,7 @@ function CaptureImage() {
             type:action_types.SET_IMAGE,
             imageCapture:imageSrc
           })
-          history.push('/capture/preview')
+          history.push('/preview')
         }, [webcamRef]
         
       );
@@ -46,8 +50,8 @@ function CaptureImage() {
              width={videoConstraints.width}
              videoConstraints={videoConstraints}
             />
-             <div >
-              <button className='captureImage__button' onClick={capture}>CAPTURE</button>
+             <div className='captureImage__button'>
+              <CameraIcon  onClick={capture}/>
               {console.log(state.imageCapture)}
             </div>
         </div>

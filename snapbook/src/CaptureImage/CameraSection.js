@@ -9,7 +9,7 @@ function CameraSection() {
     const history=useHistory();
 
     const camera=()=>{
-        history.push('/capture')
+        history.replace('/')
     }
 
 return (

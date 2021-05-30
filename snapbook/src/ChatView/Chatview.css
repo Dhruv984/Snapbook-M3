@@ -1,0 +1,7 @@
+.chatview{
+    position: relative;
+}
+.chatview__countdown{
+    position:absolute;
+    top:0;
+}
